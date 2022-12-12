@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    private readonly float GravityConstant = 6.6743E-11f;
+    private readonly float GravityConstant = 0.0001f;
     private Body[] Bodies;
     private Vector3[] GravitationalForces;
 
@@ -24,12 +23,9 @@ public class Gravity : MonoBehaviour
                 if (attractor == attractedBody) continue;
                 var attractorPosition = attractor.transform.position;
                 var attractedPosition = attractedBody.transform.position;
-                var distanceBetween =
-                    Math.Abs(Vector3.Distance(attractedPosition, attractorPosition));
-                var force = GravityConstant * attractedBody.Mass * attractor.Mass /
-                            Mathf.Pow(distanceBetween, 2f);
-                var direction = attractorPosition - attractedPosition;
-                totalForce += direction * force;
+                var distanceBetween = (attractorPosition - attractedPosition).sqrMagnitude;
+                var direction = (attractorPosition - attractedPosition).normalized;
+                totalForce += GravityConstant * attractor.Mass * direction / distanceBetween;
             }
 
             GravitationalForces[i] = totalForce;

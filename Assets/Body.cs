@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Body : MonoBehaviour
 {
-    private const float SpeedMultiplier = 100;
+    private const float SpeedMultiplier = 1;
 
     public float Mass = 10;
     public Vector3 Velocity = Vector3.zero;
@@ -20,9 +20,8 @@ public class Body : MonoBehaviour
     {
         var previousPosition = transform.position;
         var time = Time.fixedDeltaTime * SpeedMultiplier;
-        Velocity += Acceleration * (.5f * Mathf.Pow(time, 2));
+        Velocity += Acceleration * time;
         var newPosition = Velocity * time + previousPosition;
-        transform.Translate(Velocity);
 
         Debug.DrawLine(previousPosition, newPosition, PlanetColor, 100000);
         transform.position = newPosition;
