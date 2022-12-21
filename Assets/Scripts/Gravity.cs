@@ -2,22 +2,22 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    private Body[] Bodies;
-    private Vector3[] GravitationalForces;
+    private Body[] _bodies;
+    private Vector3[] _gravitationalForces;
 
     private void Start()
     {
-        Bodies = GetComponentsInChildren<Body>();
-        GravitationalForces = new Vector3[Bodies.Length];
+        _bodies = GetComponentsInChildren<Body>();
+        _gravitationalForces = new Vector3[_bodies.Length];
     }
 
     private void FixedUpdate()
     {
-        for (var i = 0; i < Bodies.Length; i++)
+        for (var i = 0; i < _bodies.Length; i++)
         {
             var totalForce = Vector3.zero;
-            var attractedBody = Bodies[i];
-            foreach (var attractor in Bodies)
+            var attractedBody = _bodies[i];
+            foreach (var attractor in _bodies)
             {
                 if (attractor == attractedBody) continue;
                 var positionDifference = attractor.transform.position - attractedBody.transform.position;
@@ -26,10 +26,9 @@ public class Gravity : MonoBehaviour
                 totalForce += UniversalConstants.Gravity * attractor.Mass * direction / distanceBetween;
             }
 
-            GravitationalForces[i] = totalForce;
-            //Debug.Log($"{attractedBody.name}: {totalForce.magnitude}N in direction {totalForce.normalized}");
+            _gravitationalForces[i] = totalForce;
         }
 
-        for (var i = 0; i < Bodies.Length; i++) Bodies[i].ApplyForce(GravitationalForces[i]);
+        for (var i = 0; i < _bodies.Length; i++) _bodies[i].ApplyForce(_gravitationalForces[i]);
     }
 }

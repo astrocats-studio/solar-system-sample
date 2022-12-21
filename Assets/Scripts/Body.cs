@@ -5,7 +5,6 @@ public class Body : MonoBehaviour
 {
     public Vector3 Velocity = Vector3.zero;
 
-    private Vector3 _acceleration = Vector3.zero;
     private Color _planetColor;
     private Rigidbody _rigidBody;
     public float Mass { get; private set; }
@@ -18,13 +17,16 @@ public class Body : MonoBehaviour
         Mass = _rigidBody.mass;
     }
 
-    public void ApplyForce(Vector3 force)
+    private void Update()
     {
-        _acceleration = force / Mass;
+        //transform.localScale.
+    }
+
+    public void ApplyForce(Vector3 acceleration)
+    {
+        Velocity += acceleration;
         var previousPosition = _rigidBody.position;
-        var time = Time.fixedDeltaTime * UniversalConstants.SpeedMultiplier;
-        Velocity += _acceleration * time;
-        var newPosition = Velocity * time + previousPosition;
+        var newPosition = previousPosition + Velocity;
 
         Debug.DrawLine(previousPosition, newPosition, _planetColor, 100000);
         _rigidBody.MovePosition(newPosition);
