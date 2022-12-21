@@ -213,7 +213,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.034310848, g: 0.13036598, b: 0.09592884, a: 1}
+    - _Color: {r: 0.19385727, g: 0.80213, b: 0.72105837, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819646, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3652
+      value: -3720
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819646, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819647, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: Velocity.x
-      value: 0.22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819647, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: Velocity.y
@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819647, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: Velocity.z
-      value: -4.54
+      value: -4.49
       objectReference: {fileID: 0}
     - target: {fileID: 4051586906073819647, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
       propertyPath: SurfaceGravity
@@ -421,7 +421,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4051586906073819646, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 963194228}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8070890fe8bd3c88e911946717d00e, type: 3}
 --- !u!4 &179294436 stripped
@@ -609,7 +612,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.024000047, g: 0.036690477, b: 0.023835583, a: 1}
+    - _Color: {r: 0.17166388, g: 0.17269132, b: 0.17749418, a: 1}
     - _EmissionColor: {r: 1, g: 0.97164285, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &679616583
@@ -625,6 +628,7 @@ GameObject:
   - component: {fileID: 679616586}
   - component: {fileID: 679616588}
   - component: {fileID: 679616589}
+  - component: {fileID: 679616590}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -739,6 +743,68 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!108 &679616590
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679616583}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 0.27450982, a: 1}
+  m_Intensity: 5
+  m_Range: 20000
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 1
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +989,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.067937665, g: 0.10901837, b: 0.17883386, a: 1}
+    - _Color: {r: 0.05549992, g: 0.010215757, b: 0.015968373, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
@@ -1017,14 +1083,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: 0.6977279, z: -0, w: 0.71636283}
-  m_LocalPosition: {x: -2393, y: 0, z: -80}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.4, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 88.49, z: 0}
+  m_Father: {fileID: 1715274641}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &971848280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1140,7 @@ Transform:
   - {fileID: 1715274641}
   - {fileID: 2059520640}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &971848283
 MonoBehaviour:
@@ -1179,7 +1245,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6588183, g: 0.6589971, b: 0.57068187, a: 1}
+    - _Color: {r: 0.174258, g: 0.2560244, b: 0.17210793, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
@@ -1385,7 +1451,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.6230132, g: 0.60823107, b: 0.5949848, a: 1}
+    - _Color: {r: 0.8492266, g: 0.7964146, b: 0.7913301, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0.99999994}
     - _EmissionColorUI: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColorWithMapUI: {r: 1, g: 1, b: 1, a: 1}
